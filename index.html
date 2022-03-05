@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        class ES6Class {
+            constructor() {
+
+            }
+            clone(obj) {
+                let newobj = { ...obj, artist : {...obj.artist }};
+                return newobj;
+            }
+        }
+
+        function init() {
+            let image = {
+                width: 50,
+                height: 100,
+                artist: {
+                    name: 'De Vinci',
+                    originCountry: 'Italy'
+                }
+            };
+
+            let cloner = new ES6Class();
+            let newimage = cloner.clone(image);
+
+            newimage.height = 50;
+            newimage.artist.name = "michelangelo";
+
+            console.log('first img', image);
+            console.log('new', newimage);
+        }
+
+
+
+    </script>
+</head>
+
+<body onload="init()">
+
+</body>
+
+</html>
